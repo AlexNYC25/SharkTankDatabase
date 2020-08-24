@@ -146,3 +146,10 @@ CREATE TABLE "cast" (
 -- end of cast
 
 -- START OF FOREIGN KEYS
+
+ALTER TABLE "pitches" ADD FOREIGN KEY ("company_id") REFERENCES "companies" ("company_id");
+ALTER TABLE "pitches" ADD FOREIGN KEY ("initial_offer_id") REFERENCES "initial_offers" ("initial_offer_id");
+ALTER TABLE "pitches" ADD FOREIGN KEY ("final_offer_id") REFERENCES "final_offers" ("final_offer_id");
+ALTER TABLE "pitches" ADD FOREIGN KEY ("episode_id") REFERENCES "episodes" ("episode_id");
+
+
