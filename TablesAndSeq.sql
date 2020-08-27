@@ -1,4 +1,5 @@
 
+CREATE DATABASE sharktank;
 -- start of pitches Table sql
 
 CREATE SEQUENCE pitches_id_seq START 1;
@@ -152,4 +153,10 @@ ALTER TABLE "pitches" ADD FOREIGN KEY ("initial_offer_id") REFERENCES "initial_o
 ALTER TABLE "pitches" ADD FOREIGN KEY ("final_offer_id") REFERENCES "final_offers" ("final_offer_id");
 ALTER TABLE "pitches" ADD FOREIGN KEY ("episode_id") REFERENCES "episodes" ("episode_id");
 
+
+ALTER TABLE "employment" ADD FOREIGN KEY ("company_id") REFERENCES "companies" ("company_id");
+ALTER TABLE "employment" ADD FOREIGN KEY ("entrepreneur_id") REFERENCES "entrepreneur" ("entrepreneur_id");
+
+ALTER TABLE "cast" ADD FOREIGN KEY ("episode_id") REFERENCES "episodes" ("episode_id");
+ALTER TABLE "cast" ADD FOREIGN KEY ("investor_id") REFERENCES "investors" ("investor_id");
 
